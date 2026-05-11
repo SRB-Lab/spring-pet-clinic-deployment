@@ -97,7 +97,8 @@ on:
 jobs:
   deploy:
     name: "Deploy ${{ inputs.service-name }}"
-    runs-on: ubuntu-latest   # GitHub-hosted runner — no self-hosted runner needed
+    #runs-on: ubuntu-latest   # GitHub-hosted runner — no self-hosted runner needed
+    runs-on: self-hosted   # self-hosted runner needed
  
     steps:
       # ── 1. Check out the deployment repo (contains K8s manifests) ──────────
