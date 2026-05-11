@@ -33,13 +33,13 @@ on:
         default: 'latest'
 
   # ── Auto-trigger on push to this feature branch ───────────────────────────
-  push:
-    branches:
-      - feature/cicd-templates
-    paths:
-      - '.github/workflows/reusable-deploy.yml'
-      - '.github/workflows/test-one-service.yml'
-      - 'k8s/config-server/**'
+  #push:
+    #branches:
+      #- feature/cicd-templates
+    #paths:
+      #- '.github/workflows/reusable-deploy.yml'
+      #- '.github/workflows/test-one-service.yml'
+      #- 'k8s/config-server/**'
 
 # ── Call the reusable workflow for config-server only ────────────────────────
 jobs:
