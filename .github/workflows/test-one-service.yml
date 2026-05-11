@@ -43,11 +43,11 @@ on:
 
 # ── Call the reusable workflow for config-server only ────────────────────────
 jobs:
-  #runs-on: ubuntu-latest   # GitHub-hosted runner — no self-hosted runner needed
-  runs-on: self-hosted   # self-hosted runner needed - testing
   deploy-config-server:
     name: "🧪 Test — Deploy config-server (eu-west-1)"
     uses: ./.github/workflows/reusable-deploy.yml
+    #runs-on: ubuntu-latest   # GitHub-hosted runner — no self-hosted runner needed
+    runs-on: self-hosted   # self-hosted runner needed - testing
     with:
       service-name:     "spring-petclinic-config-server"
       manifest-path:    "k8s/config-server"         # folder with deployment.yaml + service.yaml
