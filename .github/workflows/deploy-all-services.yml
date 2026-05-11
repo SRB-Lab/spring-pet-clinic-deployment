@@ -207,7 +207,7 @@ jobs:
       - deploy-admin-server
       - deploy-genai-service
     #runs-on: ubuntu-latest   # GitHub-hosted runner — no self-hosted runner needed
-    runs-on: self-hosted   # self-hosted runner needed
+    runs-on: self-hosted   # self-hosted runner needed - testing
     steps:
       - uses: actions/checkout@v4
 
