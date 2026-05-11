@@ -33,12 +33,12 @@ on:
         default: 'latest'
 
   # ── Auto-trigger on push to this feature branch ───────────────────────────
-  #push:
-    #branches:
-      #- feature/cicd-templates
-    #paths:
+  push:
+    branches:
+      - feature/cicd-templates
+    paths:
       #- '.github/workflows/reusable-deploy.yml'
-      #- '.github/workflows/test-one-service.yml'
+      - '.github/workflows/test-one-service.yml'
       #- 'k8s/config-server/**'
 
 # ── Call the reusable workflow for config-server only ────────────────────────
@@ -46,8 +46,6 @@ jobs:
   deploy-config-server:
     name: "🧪 Test — Deploy config-server (eu-west-1)"
     uses: ./.github/workflows/reusable-deploy.yml
-    #runs-on: ubuntu-latest   # GitHub-hosted runner — no self-hosted runner needed
-    runs-on: self-hosted   # self-hosted runner needed - testing
     with:
       service-name:     "spring-petclinic-config-server"
       manifest-path:    "k8s/config-server"         # folder with deployment.yaml + service.yaml
